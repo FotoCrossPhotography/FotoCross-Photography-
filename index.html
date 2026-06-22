@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FotoCross Photography | Luxury Visual Storytelling</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Animated Plugin Configuration (Simulated via Custom Utilities) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0B132B; /* Luxury Dark Deep Blue */
+            color: #F4F4F9;
+        }
+        h1, h2, h3, .font-luxury {
+            font-family: 'Cinzel', serif;
+        }
+        /* Custom Red/Blue Luxury Theme Accents */
+        .text-luxury-red { color: #E63946; }
+        .bg-luxury-red { background-color: #E63946; }
+        .border-luxury-red { border-color: #E63946; }
+        .bg-luxury-blue { background-color: #1C2541; }
+        .glow-red:hover {
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
+            transition: all 0.4s ease;
+        }
+        /* Scroll Animation Overlay */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0B132B]/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://www.localhomeservicepros.com/logos/profile/limage-307420-10-photo.webp" alt="FotoCross Logo" class="h-12 w-auto object-contain rounded-full border border-luxury-red bg-white p-0.5">
+                <span class="font-luxury text-xl font-bold tracking-widest hidden sm:inline text-white">FOTOCROSS</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
+                <a href="#about" class="hover:text-luxury-red transition-colors duration-300">About</a>
+                <a href="#services" class="hover:text-luxury-red transition-colors duration-300">Services</a>
+                <a href="#reviews" class="hover:text-luxury-red transition-colors duration-300">Reviews</a>
+                <a href="#contact" class="hover:text-luxury-red transition-colors duration-300">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-luxury-red text-white text-xs uppercase tracking-widest font-semibold px-6 py-3 rounded-none glow-red transition-all duration-300">Book Session</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0B132B] w-full border-t border-gray-800 px-6 py-4 space-y-4 text-center">
+            <a href="#about" class="block text-sm uppercase tracking-widest py-2 hover:text-luxury-red">About</a>
+            <a href="#services" class="block text-sm uppercase tracking-widest py-2 hover:text-luxury-red">Services</a>
+            <a href="#reviews" class="block text-sm uppercase tracking-widest py-2 hover:text-luxury-red">Reviews</a>
+            <a href="#contact" class="block text-sm uppercase tracking-widest py-2 hover:text-luxury-red">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section (Luxury Cinematic Entry) -->
+    <section class="relative h-screen flex items-center justify-center bg-cover bg-center overflow-hidden" style="background-image: linear-gradient(rgba(11, 19, 43, 0.7), rgba(11, 19, 43, 0.85)), url('https://lapkovsky.com/wp-content/uploads/2022/02/wedding_ra_047.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0B132B] via-transparent to-transparent"></div>
+        <div class="relative z-10 text-center max-w-4xl px-4 animate__animated animate__fadeInUp">
+            <p class="text-luxury-red font-luxury uppercase tracking-widest text-sm sm:text-base font-semibold mb-3">Capturing Life's Premier Milestones</p>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-tight text-white">
+                FOTOCROSS <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">PHOTOGRAPHY</span>
+            </h1>
+            <div class="w-24 h-1 bg-luxury-red mx-auto mb-6"></div>
+            <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light">
+                Professional luxury photography dedicated to freezing raw emotions, dynamic movements, and timeless elegance into striking, high-end visual masterpieces.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#services" class="w-full sm:w-auto bg-luxury-red text-white font-semibold uppercase tracking-widest text-xs px-8 py-4 glow-red transition-all">Explore Portfolio</a>
+                <a href="#contact" class="w-full sm:w-auto border border-white text-white font-semibold uppercase tracking-widest text-xs px-8 py-4 hover:bg-white hover:text-[#0B132B] transition-all">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="reveal py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative group overflow-hidden border border-gray-800 p-3 bg-luxury-blue">
+                <img src="https://i.wfolio.ru/x/cXPZPmu9lCw5tkRNat7JtyHjrPiZiclN/VJgIrluFLtZWGwzaT5FJ07DuSK__bTQA/cTp92wovI3BTxEi4Hgix0QRK-0CuMLtv/ETeHoL2tbuK-sKEvdV-DwCz_o4DV0wG4.png" alt="About FotoCross" class="w-full h-[450px] object-cover filter grayscale hover:grayscale-0 transition-all duration-700">
+                <div class="absolute inset-0 border-2 border-luxury-red m-6 pointer-events-none opacity-50 group-hover:scale-105 transition-transform duration-500"></div>
+            </div>
+            <div class="space-y-6">
+                <p class="text-luxury-red uppercase tracking-widest font-semibold text-sm">Behind The Lens</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-wide">FRAMING EMOTIONS, CRAFTING MEMORIES</h2>
+                <div class="w-16 h-1 bg-luxury-red"></div>
+                <p class="text-gray-300 leading-relaxed font-light">
+                    At FotoCross Photography, we specialize in high-end lifestyle, events, and portrait photography. Originating from our dedication to finding the perfect cross-section of light, atmosphere, and authentic human expression, we turn split-second actions into timeless art.
+                </p>
+                <p class="text-gray-400 leading-relaxed font-light text-sm">
+                    Whether it's an intimate family bond, the high-octane energy of a sporting event, or the polished aesthetics of corporate branding, our lenses deliver crisp, premium visuals configured precisely to tell your distinct story.
+                </p>
+                <div class="pt-4">
+                    <a href="#contact" class="text-sm font-semibold tracking-widest uppercase text-white hover:text-luxury-red inline-flex items-center transition-colors">
+                        Learn More About Our Process <i class="fa-solid fa-arrow-right-long ml-2 text-luxury-red"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="reveal bg-luxury-blue py-24 px-6 border-y border-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <p class="text-luxury-red uppercase tracking-widest font-semibold text-sm mb-2">Our Offerings</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-wide">PREMIUM PHOTOGRAPHY SERVICES</h2>
+                <div class="w-16 h-1 bg-luxury-red mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: Family Portraits -->
+                <div class="bg-[#0B132B] border border-gray-800 overflow-hidden group hover:border-luxury-red transition-all duration-300">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="https://i.pinimg.com/474x/36/d7/6e/36d76e370aa045860bd0e4168f3769e6.jpg?nii=t" alt="Family Portraits" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-[#0B132B]/40 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-white tracking-wider">FAMILY PORTRAITS</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Beautifully orchestrated multi-generational images capturing authentic smiles, interactions, and bonds to pass down through generations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2: Corporate Events -->
+                <div class="bg-[#0B132B] border border-gray-800 overflow-hidden group hover:border-luxury-red transition-all duration-300">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="https://exnihilomagazine.com/wp-content/uploads/2025/06/freepik__upload__67192.jpg" alt="Corporate Events" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-[#0B132B]/40 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-white tracking-wider">CORPORATE EVENTS</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Sleek, professional documentation of galas, networking symposiums, corporate branding summits, and luxury commercial milestones.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3: Sports Events -->
+                <div class="bg-[#0B132B] border border-gray-800 overflow-hidden group hover:border-luxury-red transition-all duration-300">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="https://atavatan-turkmenistan.com/wp-content/uploads/2026/05/Tour-Of-Turkiye-2-1-1536x1026.jpg" alt="Sports Events" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-[#0B132B]/40 group-hover:bg-transparent transition-colors duration-300"></div>
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-white tracking-wider">SPORTS EVENTS</h3>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">
+                            High-shutter-speed editorial action captures freezing the perfect split-second kinetic energy, competitive drama, and raw athletic power.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reveal py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <p class="text-luxury-red uppercase tracking-widest font-semibold text-sm mb-2">Client Endorsements</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-wide">WHAT OUR CLIENTS SAY</h2>
+            <div class="w-16 h-1 bg-luxury-red mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="bg-luxury-blue p-8 border-l-4 border-luxury-red relative">
+                <i class="fa-solid fa-quote-right absolute top-6 right-8 text-gray-700 text-4xl opacity-30"></i>
+                <div class="flex text-yellow-500 mb-4 space-x-1">
+                    <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                </div>
+                <p class="text-gray-300 text-sm font-light italic leading-relaxed mb-6">
+                    "FotoCross captured our luxury corporate gala beautifully. The framing, clarity, and turn-around time exceeded our expectations. Truly professional craftsmanship."
+                </p>
+                <h4 class="font-luxury text-white text-sm font-semibold tracking-widest">- Victoria M., Managing Partner</h4>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-luxury-blue p-8 border-l-4 border-luxury-red relative">
+                <i class="fa-solid fa-quote-right absolute top-6 right-8 text-gray-700 text-4xl opacity-30"></i>
+                <div class="flex text-yellow-500 mb-4 space-x-1">
+                    <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                </div>
+                <p class="text-gray-300 text-sm font-light italic leading-relaxed mb-6">
+                    "The family portraits are absolutely stunning. They managed to catch pure candid reactions from our kids without it feeling forced. Highly recommend FotoCross!"
+                </p>
+                <h4 class="font-luxury text-white text-sm font-semibold tracking-widest">- The Sterling Family</h4>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-luxury-blue p-8 border-l-4 border-luxury-red relative">
+                <i class="fa-solid fa-quote-right absolute top-6 right-8 text-gray-700 text-4xl opacity-30"></i>
+                <div class="flex text-yellow-500 mb-4 space-x-1">
+                    <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+                </div>
+                <p class="text-gray-300 text-sm font-light italic leading-relaxed mb-6">
+                    "Unbelievable action sports shots! The sharpness of the imagery under extreme high speed movement is phenomenal. The ultimate photography service team."
+                </p>
+                <h4 class="font-luxury text-white text-sm font-semibold tracking-widest">- Marcus D., Event Coordinator</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="reveal bg-luxury-blue border-t border-gray-900 py-24 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Contact Left Details -->
+            <div class="space-y-8">
+                <div>
+                    <p class="text-luxury-red uppercase tracking-widest font-semibold text-sm mb-2">Connect With Us</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-wide">BOOK YOUR DISCOVERY SESSION</h2>
+                    <div class="w-16 h-1 bg-luxury-red mt-4"></div>
+                </div>
+                <p class="text-gray-300 font-light text-sm leading-relaxed">
+                    Ready to elevate your personal branding, lock down event coverages, or establish stunning generational portraits? Reach out via our channels below.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-[#0B132B] border border-gray-800 text-luxury-red p-3 rounded-none">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-luxury text-xs text-gray-400 tracking-wider uppercase">Call / Message</h4>
+                            <p class="text-white font-medium mt-1">+1 (765) 438-2321</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-[#0B132B] border border-gray-800 text-luxury-red p-3 rounded-none">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-luxury text-xs text-gray-400 tracking-wider uppercase">Inquiries Email</h4>
+                            <p class="text-white font-medium mt-1">contact@fotocrossphotography.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-[#0B132B] border border-gray-800 text-luxury-red p-3 rounded-none">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-luxury text-xs text-gray-400 tracking-wider uppercase">Studio Location</h4>
+                            <p class="text-white font-medium mt-1">Indianapolis Metro Area & Surrounds, USA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Right Quick Form -->
+            <div class="bg-[#0B132B] border border-gray-800 p-8 space-y-6">
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Full Name</label>
+                        <input type="text" class="w-full bg-luxury-blue border border-gray-800 text-white px-4 py-3 text-sm focus:outline-none focus:border-luxury-red transition-colors" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Email Address</label>
+                        <input type="email" class="w-full bg-luxury-blue border border-gray-800 text-white px-4 py-3 text-sm focus:outline-none focus:border-luxury-red transition-colors" placeholder="johndoe@email.com" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Select Photography Service</label>
+                        <select class="w-full bg-luxury-blue border border-gray-800 text-gray-400 px-4 py-3 text-sm focus:outline-none focus:border-luxury-red transition-colors">
+                            <option>Family Portraits</option>
+                            <option>Corporate Events</option>
+                            <option>Sports Events</option>
+                            <option>Other / Custom Project</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Project Vision Details</label>
+                        <textarea rows="4" class="w-full bg-luxury-blue border border-gray-800 text-white px-4 py-3 text-sm focus:outline-none focus:border-luxury-red transition-colors" placeholder="Describe the atmosphere, location, and key requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-luxury-red text-white font-semibold text-xs tracking-widest uppercase py-4 glow-red transition-all">Send Premium Inquiry</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Area (Includes Integrated Live Interactive GMB Map Embed Asset) -->
+    <footer class="bg-[#0B132B] border-t border-gray-900 py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-12">
+            
+            <!-- Branding Box -->
+            <div class="text-center lg:text-left space-y-4 max-w-sm">
+                <div class="flex items-center justify-center lg:justify-start space-x-3">
+                    <img src="https://www.localhomeservicepros.com/logos/profile/limage-307420-10-photo.webp" alt="Logo Footer" class="h-10 w-auto rounded-full bg-white p-0.5">
+                    <span class="font-luxury text-lg font-bold tracking-widest text-white">FOTOCROSS</span>
+                </div>
+                <p class="text-gray-400 text-xs font-light leading-relaxed">
+                    Setting the global standard for elite photographic framing, continuous editorial excellence, and dynamic perspective.
+                </p>
+                <div class="flex justify-center lg:justify-start space-x-4 text-gray-500">
+                    <a href="#" class="hover:text-luxury-red transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-luxury-red transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-luxury-red transition-colors"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Navigation Footer Menu Links -->
+            <div class="flex flex-col sm:flex-row gap-8 text-center text-xs uppercase tracking-widest font-semibold text-gray-400">
+                <a href="#about" class="hover:text-luxury-red transition-colors">About</a>
+                <a href="#services" class="hover:text-luxury-red transition-colors">Services</a>
+                <a href="#reviews" class="hover:text-luxury-red transition-colors">Reviews</a>
+                <a href="#contact" class="hover:text-luxury-red transition-colors">Contact Us</a>
+                <a href="https://fotocrossphotography.wordpress.com/" target="_blank" class="hover:text-luxury-red transition-colors text-luxury-red"><i class="fa-solid fa-globe mr-1"></i> Original Blog</a>
+            </div>
+
+            <!-- GMB Embed Navigation Block Map Container Element Frame styled for luxury fit -->
+            <div class="w-full max-w-[400px] border border-gray-800 p-2 bg-luxury-blue shadow-lg group hover:border-luxury-red transition-colors duration-500">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24406.496682452023!2d-86.02302795000001!3d40.12419105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42a4b85a58c7e3%3A0x5b0cabd640cfa0d0!2sFotoCross%20Photography!5e0!3m2!1sen!2s!4v1782153794329!5m2!1sen!2s" width="100%" height="200" style="border:0; filter: grayscale(80%) invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="mt-2 text-center">
+                    <a href="https://maps.google.com/?cid=6560867086884610256" target="_blank" class="text-[10px] uppercase tracking-widest font-bold text-luxury-red hover:underline block"><i class="fa-solid fa-map-location-dot mr-1"></i> Open GMB Location Listing</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto text-center border-t border-gray-900 mt-12 pt-6 text-[11px] text-gray-500 tracking-wide">
+            &copy; 2026 FotoCross Photography. All Luxury Rights Reserved. Designed for Web 2.0 Deployment.
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Scripts for Navigation & Scroll Animations -->
+    <script>
+        // Responsive Mobile Menu Drawer Toggle Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hide mobile menu on link clicks
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Scroll Triggered Viewport Reveal Animations Setup
+        function revealElements() {
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 120; // Visibility offset trigger distance threshold
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', revealElements);
+        // Run on initial loading cycle
+        window.addEventListener('load', revealElements);
+    </script>
+</body>
+</html>
